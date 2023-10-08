@@ -1,8 +1,49 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import SocialLogin from "./SocialLogin";
+import toast from "react-hot-toast";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    // get field values
+    // const name = e.target.name.value;
+    const email = e.target.email.value;
+    // const img = e.target.img.value;
+    const password = e.target.password.value;
+    console.log(email,password);
+
+    // validation
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    }else if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one capital letter");
+      return;
+
+  } else if (!/[!@#$%^&*]/.test(password)) {
+      toast.error( "Password must contain at least one special character (!@#$%^&*)");
+      return;
+    }
+
+    // creating a new user
+
+    createUser(email, password)
+      .then(() => {
+        toast.success("User created successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
     <div>
       <Navbar />
@@ -18,7 +59,7 @@ const Register = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-              <form >
+              <form onSubmit={handleRegister}>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Full Name</span>
@@ -78,7 +119,7 @@ const Register = () => {
                   Please Login
                 </Link>
               </label>
-              <SocialLogin/>
+              <SocialLogin />
             </div>
           </div>
         </div>

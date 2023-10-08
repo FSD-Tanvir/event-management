@@ -1,8 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import SocialLogin from "./SocialLogin";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const { loginUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    //get field values
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    loginUser(email, password)
+      .then(() => {
+        toast.success("User logged in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
     <div>
       <Navbar />
@@ -18,7 +40,7 @@ const Login = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-              <form >
+              <form onSubmit={handleLogin}>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -36,6 +58,7 @@ const Login = () => {
                   </label>
                   <input
                     type="password"
+                    placeholder="password"
                     name="password"
                     className="input input-bordered"
                   />
@@ -50,8 +73,11 @@ const Login = () => {
                 </div>
               </form>
               <label className="label">
-                New here?{" "}
-                <Link to={"/register"} className="label-text-alt link link-hover">
+                New here?
+                <Link
+                  to={"/register"}
+                  className="label-text-alt link link-hover"
+                >
                   Create an account
                 </Link>
               </label>
