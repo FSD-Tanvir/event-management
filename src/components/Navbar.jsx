@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const navLinks = (
@@ -15,13 +17,13 @@ const Navbar = () => {
     </>
   );
 
-
+  const { user, logOut } = useContext(AuthContext);
 
   return (
     <div>
       <div className="navbar">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown ">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +42,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 font-medium text-xl "
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 font-medium text-xl bg-white text-black "
             >
               {navLinks}
             </ul>
@@ -56,22 +58,26 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end ">
-          {/* {user?.email ? (
+          {user?.email ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://i.ibb.co/y0yrnYQ/1681283571946.jpg" />
+                  <img src={user.photoURL} alt={user.displayName} />
                 </div>
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-neutral"
               >
                 <li>
-                  <button className="btn btn-sm  btn-ghost">Farhan</button>
+                  <button className="btn btn-sm  btn-ghost">
+                    {user.displayName}
+                  </button>
                 </li>
                 <li>
-                  <button className="btn btn-sm  btn-ghost">Logout</button>
+                  <button className="btn btn-sm  btn-ghost" onClick={logOut}>
+                    Logout
+                  </button>
                 </li>
               </ul>
             </div>
@@ -81,12 +87,7 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-          )} */}
-          <Link to={"/login"}>
-              <button className="btn btn-sm lg:btn-md  btn-neutral font-medium lg:text-xl">
-                Login
-              </button>
-            </Link>
+          )}
         </div>
       </div>
     </div>
