@@ -7,13 +7,15 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li className="hover:bg-white rounded-lg">
-        <NavLink to={"/services"}>Services</NavLink>
+        <NavLink to={"/about"}>About us</NavLink>
       </li>
       <li className="hover:bg-white rounded-lg">
         <NavLink to={"/contact"}>Contact</NavLink>
       </li>
     </>
   );
+
+
 
   return (
     <div>
@@ -75,14 +77,16 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button className="btn btn-sm  btn-ghost">Login</button>
+              <button className="btn btn-sm lg:btn-md  btn-neutral font-medium lg:text-xl">
+                Login
+              </button>
             </Link>
           )} */}
-          <Link to="/login">
-            <button className="btn btn-sm lg:btn-md  btn-neutral font-medium lg:text-xl">
-              Login
-            </button>
-          </Link>
+          <Link to={"/login"}>
+              <button className="btn btn-sm lg:btn-md  btn-neutral font-medium lg:text-xl">
+                Login
+              </button>
+            </Link>
         </div>
       </div>
     </div>

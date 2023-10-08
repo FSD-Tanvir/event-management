@@ -2,10 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
 import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
-import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import Login from "../pages/login/Login";
 import About from "../pages/About";
+import ServiceDetails from "../components/ServiceDetails";
+import Register from "../pages/login/Register";
 
 const routes = createBrowserRouter([
   {
@@ -18,8 +19,9 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/services",
-        element: <Services />,
+        path: "/service/:id",
+        element: <ServiceDetails />,
+        loader: () => fetch('/service.json'),
       },
       {
         path: "/contact",
@@ -28,6 +30,10 @@ const routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/about",

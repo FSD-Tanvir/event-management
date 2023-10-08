@@ -1,41 +1,41 @@
 [
     {
-      "id": 1,
+      "id": "1",
       "title": "Anniversary Celebration",
       "img": "https://i.ibb.co/hR6yKzR/heart.jpg",
       "price": 65.99,
       "description": "Celebrate your special milestone at our Anniversary Celebration. Enjoy fine dining, live music, and dancing under the stars."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Birthday Party Bash",
       "img": "https://i.ibb.co/xYSf4kf/birthday.jpg",
       "price": 45.50,
       "description": "Throw the ultimate birthday party by the beach. Roast marshmallows, listen to live acoustic music, and watch the sunset."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Family Reunion Gala",
       "img": "https://i.ibb.co/10tCS72/images.jpg",
       "price": 75.00,
       "description": "Reunite with loved ones at our Family Reunion Gala. Wear your finest attire, enjoy a gourmet feast, and dance the night away."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Masquerade Masquerade Ball",
       "img": "https://i.ibb.co/QYrkb8q/image.jpg",
       "price": 30.99,
       "description": "Step into a world of mystery and elegance at the Masquerade Ball. Wear your mask, enjoy gourmet cuisine, and dance the night away."
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Wedding Extravaganza",
       "img": "https://i.ibb.co/JzcCRcS/imges.jpg",
       "price": 55.25,
       "description": "Celebrate your love in an enchanted garden. Savor gourmet cuisine, stroll among flowers, and dance under the stars."
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Engagement Party Soiree",
       "img": "https://i.ibb.co/4Y6k9ZZ/Engagement-Party.png",
       "price": 40.00,

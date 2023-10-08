@@ -4,7 +4,7 @@ import { GiGraveFlowers } from 'react-icons/gi';
 
 const Features = () => {
   return (
-    <div className="py-10 bg-neutral bg-opacity-70 text-white ">
+    <div className="py-10 bg-base-200 text-neutral">
       <h1 className="text-center py-8 text-3xl sm:text-6xl font-semibold">
         Spacial Features!
       </h1>
