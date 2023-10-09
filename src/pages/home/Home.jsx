@@ -3,8 +3,14 @@ import Features from "./Features";
 import Navbar from "../../components/Navbar";
 import Services from "./Services";
 import ContactSection from "./ContactSection";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
     <div>
       <div className="bg-[url('https://i.ibb.co/vcPtQsS/event-bg.jpg')] bg-cover bg-blend-saturation">
@@ -13,9 +19,15 @@ const Home = () => {
           <Banner />
         </div>
       </div>
-      <Features/>
-      <Services/>
-      <ContactSection/>
+      <div data-aos="fade-up">
+        <Features />
+      </div>
+      <div data-aos="fade-in">
+        <Services />
+      </div>
+      <div data-aos="fade-down">
+        <ContactSection />
+      </div>
     </div>
   );
 };
