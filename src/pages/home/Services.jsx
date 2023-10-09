@@ -11,11 +11,11 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className="py-10 bg-base-200 text-neutral">
-      <h1 className="text-center py-5 text-3xl sm:text-6xl font-semibold">
+    <div className="py-10 bg-base-200 text-neutral text-center">
+      <h1 className=" py-5 text-3xl sm:text-6xl font-semibold">
         Event Service We Provide
       </h1>
-      <p className="text-center font-medium text-xl">
+      <p className=" font-medium text-xl">
         Crafting unforgettable events. From concept to execution,our agency
         delivers seamless and <br /> memorable experiences. Your vision, our
         expertise.

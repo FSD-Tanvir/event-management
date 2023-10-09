@@ -7,7 +7,7 @@ const Banner = () => {
         Get An Unforgettable <br /> Event Experience With us
       </h1>
       <Link to={"/explore"}>
-        <button className="btn hover:text-white hover:bg-neutral border-0">
+        <button className="btn hover:text-white hover:bg-neutral border-0 ">
           Explore More
         </button>
       </Link>

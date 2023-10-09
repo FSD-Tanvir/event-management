@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
-import Home from "../pages/Home";
+import Home from "../pages/home/Home";
 import NotFound from "../components/NotFound";
 import Contact from "../pages/Contact";
 import Login from "../pages/login/Login";
 import About from "../pages/About";
-import ServiceDetails from "../components/ServiceDetails";
+import ServiceDetails from "../pages/home/ServiceDetails";
 import Register from "../pages/login/Register";
 import PrivateRoute from "./PrivateRoute";
 

@@ -6,29 +6,30 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, handleUpdateProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
 
     // get field values
-    // const name = e.target.name.value;
+    const name = e.target.name.value;
     const email = e.target.email.value;
-    // const img = e.target.img.value;
+    const img = e.target.img.value;
     const password = e.target.password.value;
-    console.log(email,password);
+    console.log(email, password);
 
     // validation
     if (password.length < 6) {
       toast.error("Password must be at least 6 characters");
       return;
-    }else if (!/[A-Z]/.test(password)) {
+    } else if (!/[A-Z]/.test(password)) {
       toast.error("Password must contain at least one capital letter");
       return;
-
-  } else if (!/[!@#$%^&*]/.test(password)) {
-      toast.error( "Password must contain at least one special character (!@#$%^&*)");
+    } else if (!/[!@#$%^&*]/.test(password)) {
+      toast.error(
+        "Password must contain at least one special character (!@#$%^&*)"
+      );
       return;
     }
 
@@ -36,8 +37,10 @@ const Register = () => {
 
     createUser(email, password)
       .then(() => {
-        toast.success("User created successfully");
-        navigate("/");
+        handleUpdateProfile(name, img).then(() => {
+          toast.success("User created successfully");
+          navigate("/");
+        });
       })
       .catch((error) => {
         toast.error(error.message);

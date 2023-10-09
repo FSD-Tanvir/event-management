@@ -1,7 +1,8 @@
-import Banner from "../components/Banner";
-import Features from "../components/Features";
-import Navbar from "../components/Navbar";
-import Services from "../components/Services";
+import Banner from "./Banner";
+import Features from "./Features";
+import Navbar from "../../components/Navbar";
+import Services from "./Services";
+import ContactSection from "./ContactSection";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       </div>
       <Features/>
       <Services/>
+      <ContactSection/>
     </div>
   );
 };
