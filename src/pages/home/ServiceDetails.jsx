@@ -17,7 +17,7 @@ const ServiceDetails = () => {
   return (
     <div>
       <Navbar />
-      <div className="bg-base-200 rounded">
+      <div className="bg-base-200 rounded px-2">
         <div className="space-y-6 py-10 max-w-3xl  mx-auto  ">
           <h1 className=" py-5 text-3xl sm:text-6xl font-semibold">{title}</h1>
           <img src={img} alt="" className="w-full rounded-lg" />
