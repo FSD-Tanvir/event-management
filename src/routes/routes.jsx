@@ -30,11 +30,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: (
-          <PrivateRoute>
-            <Contact />
-          </PrivateRoute>
-        ),
+        element: <Contact />,
       },
       {
         path: "/login",
@@ -46,11 +42,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/about",
-        element: (
-          <PrivateRoute>
-            <About />
-          </PrivateRoute>
-        ) ,
+        element: <About />,
       },
     ],
   },

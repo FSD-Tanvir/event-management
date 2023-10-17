@@ -17,6 +17,11 @@ const ServiceDetails = () => {
   return (
     <div>
       <Navbar />
+      <div className="py-14 px-8 bg-neutral opacity-70 text-white text-center space-y-4">
+          <h1 className=" py-5 text-3xl sm:text-6xl font-semibold">
+          Service Details
+          </h1>
+        </div>
       <div className="bg-base-200 rounded px-2">
         <div className="space-y-6 py-10 max-w-3xl  mx-auto  ">
           <h1 className=" py-5 text-3xl sm:text-6xl font-semibold">{title}</h1>
